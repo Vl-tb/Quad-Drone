@@ -1,7 +1,7 @@
 import time
-from dronekit import VehicleMode
+from dronekit import Vehicle, VehicleMode
 
-def arm_and_takeoff(vehicle, meters):
+def arm_and_takeoff(vehicle: Vehicle, meters):
 
     while not vehicle.is_armable:
         print("Waiting drone to become armable")

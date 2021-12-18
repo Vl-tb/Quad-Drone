@@ -1,6 +1,5 @@
 import math
 
-
 def find_coordinates(square_coordinates, h_min: float) -> list:
     degree_x = (53.5 * math.pi) / 180
     degree_y = (41.41 * math.pi) / 180
