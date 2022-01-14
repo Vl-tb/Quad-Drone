@@ -3,7 +3,7 @@ from connect import connectMyCopter
 from photo_shot import photo
 from take_off import arm_and_takeoff
 from land import land
-from photo_coords import find_coordinates
+from coords_finder import find_center
 from read_coords import read
 from current_coords import getCoords
 from merge_main import main
@@ -12,7 +12,7 @@ from a_b import move
 
 def start_mission(high):
     edges = read()
-    coords = find_coordinates(edges, high)
+    coords = find_center(edges[0], edges[1], edges[2], high)
 
 
     base_coords = getCoords()
