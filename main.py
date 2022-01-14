@@ -19,7 +19,7 @@ def start_mission(high):
     vehicle = connectMyCopter()
     print("About to takeoff..")
     arm_and_takeoff(vehicle, high)
-    while vehicle.attitude != high - 0.5:
+    while vehicle.attitude <= high - 0.5:
         continue
     time.sleep(15)
     a = len(coords[0])+1
