@@ -8,6 +8,7 @@ from read_coords import read
 from current_coords import getCoords
 from merge_main import main
 from a_b import move
+from yaw_set import condition_yaw
 
 
 def start_mission(high):
@@ -22,6 +23,20 @@ def start_mission(high):
     while vehicle.attitude <= high - 0.5:
         continue
     time.sleep(15)
+
+    move(edges[0][0], edges[0][1], vehicle)
+    while ((abs(getCoords()[0] - edges[0][0])>= 0.00001) and
+                (abs(getCoords()[0] - edges[0][1])>= 0.00001)):
+        continue
+    time.sleep(10)
+    move(edges[2][0], edges[2][1], vehicle)
+    while ((abs(getCoords()[0] - edges[2][0])>= 0.00001) and
+                (abs(getCoords()[0] - edges[2][1])>= 0.00001)):
+        continue
+    time.sleep(10)
+
+    bearing = vehicle.attitude.yaw
+
     a = len(coords[0])+1
     b = 1
     param = 1
@@ -31,6 +46,8 @@ def start_mission(high):
             while ((abs(getCoords()[0] - coords[i][j-1][0])>= 0.00001) and
                 (abs(getCoords()[0] - coords[i][j-1][0])>= 0.00001)):
                 continue
+            time.sleep(5)
+            condition_yaw(bearing, vehicle)
             time.sleep(15)
             photo(i, j)
         a, b = b, a
