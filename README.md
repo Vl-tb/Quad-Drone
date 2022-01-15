@@ -21,9 +21,15 @@
 
 # Software (only code)
 
-Via paramiko (python library) we get the foundation for the high-level SSH library, which is used for common client as transferring files helper. (send txt file with coords to raspberry). For Drone functionality we used high-leve library DroneKit. 
+### Via paramiko (python library) we get the foundation for the high-level SSH library, which is used for common client as transferring files helper. (send txt file with coords to raspberry). For Drone functionality we used high-leve library DroneKit. 
 
 
 # Implemented and Results
 
-The drone is built and working, however, the reason why the drone can't perform the flight safely is that the voltage on one ESC is 0.7 V and on other 1.5.
+### The drone is built and working, however, the reason why the drone can't perform the flight safely is that the voltage on one ESC is 0.7 V and on other 1.5.
+
+# Contributors
+- https://github.com/Vl-tb
+- https://github.com/stepansushko1
+- https://github.com/vilgurin
+- https://github.com/msharsh
