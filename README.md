@@ -24,7 +24,18 @@
 # Software (only code)
 
 ### Via paramiko (python library) we get the foundation for the high-level SSH library, which is used for common client as transferring files helper. (send txt file with coords to raspberry). For Drone functionality we used high-leve library DroneKit. 
-
+### For this project we created two algorithms, which are deeply connected: algorithm of flight mission and algorithm of photo mapping.
+## Mapping
+### There is directory photos on the raspberry, where all photos appear. The thing is, all photos have special names, for example 11.jpg, 12.jpg, 23.jpg. Their names show their position on finaly merged big photo. 11.jpg means, that its position is top left corner, 12.jpg is to the right of 11.jpg, 21.jpg is below and so on. That's how we get big merged photo.
+## Flight mission
+### Now about mission algorithm. It consists of 3 parts.
+### 1) We get coordinates of 4 dots on the map from the .txt file. Then function center_finder() calculates coordinates of points, where our drone has to make a photo. The drone takes off and climbs on certain high. After that, he flies to the first point, mentioned in .txt, and then flies to 3rd point in .txt. He does it to find correct angle relative to North to be able to make all photos in correct orientation.
+![image](https://user-images.githubusercontent.com/76886116/149629455-f2c265d9-a16c-4ca4-acda-3f86f32556c2.jpeg)
+### 2) After that drone gets to the first center (first point, where it has to take a photo)
+![image](https://user-images.githubusercontent.com/76886116/149629509-61124948-26df-4f75-be17-608ecbe6ba80.jpeg)
+### 3) When drone is on first center, he does for each center: rotates to correct orientation, takes a photo and flies to next center.
+![image](https://user-images.githubusercontent.com/76886116/149629577-844c367a-69b1-4c6d-ad9d-c7b3e12dfb35.jpeg)
+### Finally, when the last photo is taken, drone merges all photos into one and returns to the base coordinates.
 
 # Implemented and Results
 
