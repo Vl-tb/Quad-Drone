@@ -19,7 +19,7 @@
 # Hardware 
 ### Raspberry is used for connection between Flight Controller and also laptop and the camera is also connected to the raspberry. All modules are stored and executed on Raspberry Pi. We used MAV-Link protocol for communication between a Ground Control Station, in our case this is raspberry and quadcopter Flight Controller. It is used to transmit the orientation of the vehicle, its GPS location and speed to the Flight Controller. GPS is connected to Flight Controller and located on the top position of drone to better receive current location. As firmware we used ArduPilot. Belowe is the scheme:
 
-[drone.pdf](https://github.com/Vl-tb/Quad-Drone/files/7875305/drone.pdf)
+![image](https://user-images.githubusercontent.com/73778979/149628669-50bbbc8e-f110-40e8-b71d-c8a41af89bdb.png)
 
 # Software (only code)
 
